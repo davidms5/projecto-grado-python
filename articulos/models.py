@@ -1,5 +1,6 @@
 from django.db import models
 import uuid
+from django.contrib.auth.hashers import make_password
 # Create your models here.
 
 class Tickets(models.Model):
@@ -12,6 +13,20 @@ class Tickets(models.Model):
     def __str__(self):
         return self.nombre
 
+#
+#
+# lo de anajo es basicamente para el login del frontend
+#
+#
+class Empleados(models.Model):
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=200)
+    email = models.EmailField()
+    password = models.CharField(max_length=128)
+
+    def save(self, *args, **kwargs):
+        self.password = make_password(self.password)
+        super(Empleados, self).save(*args, **kwargs)
 
 #class Articulo(models.Model):
 #    codigo = models.CharField(max_length=200)
