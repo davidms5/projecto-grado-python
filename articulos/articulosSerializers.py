@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Articulo
+from .models import Tickets
 
 class ArticuloSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Articulo
+        model = Tickets
         fields = '__all__'

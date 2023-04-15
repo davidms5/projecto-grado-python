@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Articulo
+from .models import Tickets
 
-admin.site.register(Articulo)
+admin.site.register(Tickets)
 
 # Register your models here.
