@@ -1,0 +1,18 @@
+[[services]]
+  internal_port = 8000
+  protocol = "http"
+  script = "python manage.py runserver 0.0.0.0:$${PORT:-8000}"
+  env = {
+    "DJANGO_SETTINGS_MODULE": "backend.settings",
+    "PYTHONUNBUFFERED": "1"
+  }
+
+[[services]]
+  internal_port = 3000
+  protocol = "http"
+  script = "npm start"
+  env = {
+    "NODE_ENV": "production",
+    "PORT": "$${PORT}"
+  }
+
