@@ -1,6 +1,6 @@
 import fileDownload from 'js-file-download';
 import { Inter } from 'next/font/google';
-import {useState} from 'react';
+import {use, useState} from 'react';
 import axios from 'axios';
 import { Producto } from '@/interfaces/interfaces';
 //const inter = Inter({ subsets: ['latin'] })
@@ -16,6 +16,7 @@ const tickets: Producto = {
 export default function Home() {
 
   const [mensaje, setMensaje] = useState<boolean>(false);
+  const [donwload, setDownload] = useState<boolean>(false);
   const [ticket, setTicket] = useState<Producto>(tickets);
   const [id, setId] = useState<string>('');
 
@@ -24,8 +25,10 @@ export default function Home() {
     try {
       
       const response = await axios.get(`tickets/${id}/download-pdf`, {
-        responseType: 'blob'
-      })
+        responseType: 'blob',
+      });
+
+      fileDownload(response.data, 'ticket.pdf')
     } catch (error){
       console.log(error)
     }
@@ -35,7 +38,12 @@ export default function Home() {
     event.preventDefault();
     try{
     const response = await axios.post("http://localhost:8000/tickets/", ticket)
+
     console.log(response.data?.uuid)
+
+    setId(response.data?.uuid)
+
+    setDownload(true)
     if(response.status === 201){
       //window.alert("muchas gracias por viajar con nosotros")
       setMensaje(true)
@@ -71,7 +79,7 @@ export default function Home() {
 
         <button type='submit'>enviar</button>
       </form>
-      
+        <button onClick={handleDownload}>descargar ticket</button>
         {mensaje && <h2>muchas gracias por viajar con nosotros</h2>}
 
       <a href="http://127.0.0.1:8000/admin" style={{fontSize:"24px"}}>login</a>
