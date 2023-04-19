@@ -16,7 +16,7 @@ const tickets: Producto = {
 export default function Home() {
 
   const [mensaje, setMensaje] = useState<boolean>(false);
-  const [donwload, setDownload] = useState<boolean>(false);
+  const [download, setDownload] = useState<boolean>(false);
   const [ticket, setTicket] = useState<Producto>(tickets);
   const [id, setId] = useState<string>('');
 
@@ -79,7 +79,7 @@ export default function Home() {
 
         <button type='submit'>enviar</button>
       </form>
-        <button onClick={handleDownload}>descargar ticket</button>
+        {download && <button onClick={handleDownload}>descargar ticket</button>}
         {mensaje && <h2>muchas gracias por viajar con nosotros</h2>}
 
       <a href="http://127.0.0.1:8000/admin" style={{fontSize:"24px"}}>login</a>

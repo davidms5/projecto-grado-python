@@ -1,0 +1,5 @@
+los problemas actuales son:
+-usar una libreria en python que convierta la data en pdf
+-revisar que la parte del link que usa el uuid en su url este corregido y no parezca un slug
+-volver el projecto monorepo
+-configurar django para produccion
