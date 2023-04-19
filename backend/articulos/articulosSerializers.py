@@ -3,10 +3,12 @@ from django.contrib.auth.hashers import make_password
 from .models import Tickets, Empleados
 
 class ArticuloSerializer(serializers.ModelSerializer):
+
+    uuid = serializers.UUIDField(format='hex', read_only=True)
     
     class Meta:
         model = Tickets
-        fields = '__all__'
+        fields = ['nombre', 'apellido', 'uuid', 'fecha', 'precio']
 
 
 class EmpleadosSerializer(serializers.ModelSerializer):
@@ -14,8 +16,8 @@ class EmpleadosSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Empleados
-        fields = ('nombre', 'apellido', 'email', 'password',)
+        fields = ['nombre', 'apellido', 'email', 'password']
 
     def create(self, validated_data):
-        validated_data[password] = make_password(validated_data['password'])
-        return super(ArticuloSerializer, self).create(validated_data)
+        validated_data["password"] = make_password(validated_data.get('password'))
+        return super().create(validated_data)
