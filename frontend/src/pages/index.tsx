@@ -85,6 +85,11 @@ export default function Home() {
         <button type='submit'>enviar</button>
       </form>
         {download && <button onClick={handleDownload}>descargar ticket</button>}
+
+      
+      <p>{ticket.nombre}</p>
+      <p>{ticket.apellido}</p>
+      <p>{id}</p>
         {mensaje && <h2>muchas gracias por viajar con nosotros</h2>}
 
       <a href="http://127.0.0.1:8000/admin" style={{fontSize:"24px"}}>login</a>
