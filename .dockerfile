@@ -1,5 +1,5 @@
 # Backend service
-FROM python:3.9-slim-buster AS backend
+FROM python:3.11-slim-buster AS backend
 WORKDIR /app/backend
 COPY backend/requirements.txt .
 RUN pip install -r requirements.txt
