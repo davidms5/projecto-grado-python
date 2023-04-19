@@ -1,4 +1,5 @@
 import io
+from reportlab.pdfgen import canvas
 from django.shortcuts import render
 from django.http import FileResponse
 from django.views.decorators.http import require_GET
@@ -22,11 +23,18 @@ def download_pdf(request, pk):
     serializer = ArticuloSerializer(obj)
     data = serializer.data
 
-    pdf_file = generate_pdf(data)
 
-    response = FileResponse(pdf_file, content_type='application/pdf')
+    buffer = io.BytesIO()
+    p = canvas.Canvas(buffer)
+    p.drawString(100, 750, f"datos: {data}")
+    p.showPage()
+    p.save()
+    buffer.seek(0)
+    #pdf_file = generate_pdf(data)
 
-    response['Content-Disposition'] = f'attachment; filename="ticket.pdf"'
+    response = FileResponse(buffer, as_attachment=True, filename='ticket.pdf')
+
+    #response['Content-Disposition'] = f'attachment; filename="ticket.pdf"'
 
     return response
 

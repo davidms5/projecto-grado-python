@@ -19,14 +19,19 @@ export default function Home() {
   const [download, setDownload] = useState<boolean>(false);
   const [ticket, setTicket] = useState<Producto>(tickets);
   const [id, setId] = useState<string>('');
+  const [pdf, setPdf] = useState<string>('');
+
 
   async function handleDownload(){
 
     try {
       
-      const response = await axios.get(`tickets/${id}/download-pdf`, {
+      const response = await axios.get(`tickets/${id}/download-pdf/`, {
         responseType: 'blob',
       });
+
+      const url = URL.createObjectURL(response.data)
+      setPdf(url);
 
       fileDownload(response.data, 'ticket.pdf')
     } catch (error){

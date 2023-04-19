@@ -4,4 +4,4 @@ los problemas actuales son:
 -volver el projecto monorepo
 -configurar django para produccion
 
-una posible solucion para el slug es que el back me mande un uuid en ves de un string
+en typescript no hay problema que el uuid lo gusrde como string? tiene un type aparte pars el uuid?
