@@ -39,7 +39,7 @@ export default function Home() {
     try{
     const response = await axios.post("http://localhost:8000/tickets/", ticket)
 
-    console.log(response.data?.uuid)
+    console.log(response.data)
 
     setId(response.data?.uuid)
 

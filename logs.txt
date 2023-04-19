@@ -3,3 +3,5 @@ los problemas actuales son:
 -revisar que la parte del link que usa el uuid en su url este corregido y no parezca un slug
 -volver el projecto monorepo
 -configurar django para produccion
+
+una posible solucion para el slug es que el back me mande un uuid en ves de un string

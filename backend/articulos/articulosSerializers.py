@@ -4,11 +4,13 @@ from .models import Tickets, Empleados
 
 class ArticuloSerializer(serializers.ModelSerializer):
 
-    uuid = serializers.UUIDField(format='hex', read_only=True)
+    #lo de abajo no haria falta
+    # uuid = serializers.UUIDField(format='hex', read_only=True)
     
     class Meta:
         model = Tickets
-        fields = ['nombre', 'apellido', 'uuid', 'fecha', 'precio']
+        fields = '__all__'
+        #fields = ['nombre', 'apellido', 'uuid', 'fecha', 'precio']
 
 
 class EmpleadosSerializer(serializers.ModelSerializer):
