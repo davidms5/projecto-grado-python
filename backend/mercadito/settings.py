@@ -33,11 +33,11 @@ ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
 # Application definition
 
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
-    "http://localhost:8000",
-]
-
+#CORS_ORIGIN_WHITELIST = [
+#    "http://localhost:3000",
+#    "http://localhost:8000",
+#]
+CORS_ORIGIN_ALLOW_ALL=True
 
 INSTALLED_APPS = [
     "django.contrib.admin",
