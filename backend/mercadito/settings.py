@@ -38,6 +38,8 @@ CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
 #    "http://localhost:8000",
 #]
 CORS_ORIGIN_ALLOW_ALL=True
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
 
 INSTALLED_APPS = [
     "django.contrib.admin",
