@@ -42,7 +42,7 @@ export default function Home() {
  async function handleSubmit(event: React.FormEvent<HTMLFormElement>){
     event.preventDefault();
     try{
-    const response = await axios.post("http://localhost:8000/tickets/", ticket)
+    const response = await axios.post("https://projecto-grado-python-production.up.railway.app/tickets/", ticket)
 
     console.log(response.data)
 
