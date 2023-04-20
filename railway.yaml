@@ -1,0 +1,17 @@
+# railway.yaml
+
+env: python=3.11, node=16
+
+services:
+  web:
+    build: .
+    command: npm run start
+    port: 3000
+    env:
+      NEXT_PUBLIC_API_URL: http://backend:8000
+    depends_on:
+      - backend
+  backend:
+    build: backend
+    command: python manage.py runserver 0.0.0.0:8000
+    port: 8000
