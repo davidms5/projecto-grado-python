@@ -30,14 +30,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
+#CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
 # Application definition
 
-#CORS_ORIGIN_WHITELIST = [
-#    "http://localhost:3000",
-#    "http://localhost:8000",
-#]
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "https://projecto-grado-python-production.up.railway.app",
+]
 CORS_ORIGIN_ALLOW_ALL=True
+CORS_ALLOW_CREDENTIALS = True
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
 
