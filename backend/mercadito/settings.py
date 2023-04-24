@@ -31,13 +31,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = ["https://projecto-grado-python-production.up.railway.app",]
+CSRF_TRUSTED_ORIGINS = ["https://projecto-grado-python-production.up.railway.app",
+"https://projecto-grado-python-frontend.vercel.app/",]
 # Application definition
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://localhost:8000",
     "https://projecto-grado-python-production.up.railway.app",
+    "https://projecto-grado-python-frontend.vercel.app/",
 ]
 CORS_ORIGIN_ALLOW_ALL=True
 CORS_ALLOW_CREDENTIALS = True
