@@ -123,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "es-eu"
 
-TIME_ZONE = "America/Argentina/Buenos_Aires"
+TIME_ZONE = "America/Tegucigalpa"
 
 USE_I18N = True
 
