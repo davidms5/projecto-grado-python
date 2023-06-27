@@ -40,7 +40,7 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://localhost:8000",
     "https://projecto-grado-python-production.up.railway.app",
-    "https://projecto-grado-python-frontend.vercel.app/",
+    "https://projecto-grado-python-frontend.vercel.app",
     "projecto-grado-python-frontend-production.up.railway.app",
 ]
 CORS_ORIGIN_ALLOW_ALL=True
