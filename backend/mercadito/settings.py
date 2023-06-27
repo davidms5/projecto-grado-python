@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ["*"]
 
 CSRF_TRUSTED_ORIGINS = ["https://projecto-grado-python-production.up.railway.app",
 "https://projecto-grado-python-frontend.vercel.app/",
-"projecto-grado-python-frontend-production.up.railway.app",]
+"https://projecto-grado-python-frontend-production.up.railway.app",]
 # Application definition
 
 CORS_ORIGIN_WHITELIST = [
